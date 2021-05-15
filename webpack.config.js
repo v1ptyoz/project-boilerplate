@@ -11,16 +11,21 @@ module.exports = {
     },
     module: {
         rules: [
-            {test: /\.sass$/,
-            use: [
-                miniCSS.loader,
-                'css-loader',
-                'sass-loader'
-            ]},
-            {test: /\.css$/,
+            {
+                test: /\.html$/,
+                loader: 'html-loader',
+            },
+            {
+                test: /\.sass$/,
                 use: [
                     miniCSS.loader,
                     'css-loader',
+                    'sass-loader'
+            ]},
+            {   test: /\.css$/,
+                    use: [
+                        miniCSS.loader,
+                        'css-loader',
                 ]}
         ]
     },
