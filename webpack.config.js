@@ -4,6 +4,10 @@ const miniCSS = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: context + '/js/index.js',
+    output: {
+        path: __dirname + "/dist",
+        filename: './js/[name].bundle.js'
+    },
     module: {
         rules: [
             {test: /\.sass$/,
@@ -16,7 +20,7 @@ module.exports = {
     },
     plugins: [
         new miniCSS({
-            filename: 'css/style.css'
+            filename: './css/style.css'
         })
     ]
 }
