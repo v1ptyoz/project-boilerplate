@@ -1,6 +1,7 @@
 const context = __dirname + '/src';
 
 const miniCSS = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: context + '/js/index.js',
@@ -20,12 +21,16 @@ module.exports = {
                 use: [
                     miniCSS.loader,
                     'css-loader',
-            ]}
+                ]}
         ]
     },
     plugins: [
         new miniCSS({
             filename: './css/style.css'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: '/src/index.html'
         })
     ]
 }
