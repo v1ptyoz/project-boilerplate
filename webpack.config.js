@@ -24,6 +24,13 @@ module.exports = {
                 ]}
         ]
     },
+    devServer: {
+        contentBase: '/dist',
+        open: 'firefox',
+        compress: true,
+        hot: true,
+        port: 3000
+    },
     plugins: [
         new miniCSS({
             filename: './css/style.css'
