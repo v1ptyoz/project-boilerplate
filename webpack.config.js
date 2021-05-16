@@ -26,7 +26,10 @@ module.exports = {
                     use: [
                         miniCSS.loader,
                         'css-loader',
-                ]}
+            ]},
+            {   test: /\.js/,
+                    use: ['babel-loader']
+            }
         ]
     },
     devServer: {
