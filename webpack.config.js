@@ -2,6 +2,7 @@ const context = __dirname + '/src';
 
 const miniCSS = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: context + '/js/index.js',
@@ -47,6 +48,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: '/src/index.html'
+        }),
+        new CopyPlugin({
+            patterns: [
+                {from : 'src/img', to: 'img'},
+                {from : 'src/fonts', to: 'fonts'}
+            ]
         })
     ]
 }
